@@ -78,8 +78,6 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 ^https?:\/\/webappcfg\.paas\.cmbchina\.com\/v\d\/func\/getmarketconfig - reject-200
 # > zhongguoyidong
 ^https?:\/\/client.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject-200
-# > zhongguoyinhang binfenshenghuo
-^https?:\/\/mlife\.jf365\.boc\.cn\/AppPrj\/FirstPic\.do\?txnId=2PIC000001 - reject-200
 
 [Script]
 # > jingdonglite
@@ -87,7 +85,7 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush url response-body pushData response-body ddgksf2013
 
 [MITM]
-hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, heic.alicdn.com, webappcfg.paas.cmbchina.com, amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn, gw.alicdn.com
+hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, heic.alicdn.com, webappcfg.paas.cmbchina.com, amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, gw.alicdn.com
 
 
 
