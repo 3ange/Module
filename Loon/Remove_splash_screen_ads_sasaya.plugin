@@ -52,8 +52,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https?:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/limitedAds$ - reject
 # > maoyan*
 ^https?:\/\/p0\.pipi\.cn\/adAdmin\/\w+.jpg\? - reject-img# > pinduoduo
-# > nongyeyinhang
-^https?:\/\/enjoy\.cdn-static\.abchina\.com\/yx-engine-web\/file/download\/9ce3166ce - reject-200
 # > PiaoGen
 ^https?:\/\/pss\.txffp\.com\/piaogen\/images\/launchScreen/ - reject
 # > pinduoduo
@@ -87,7 +85,7 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush url response-body pushData response-body ddgksf2013
 
 [MITM]
-hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, dsp-x.jd.com, bdsp-x.jd.com, ms.jr.jd.com, router-app-api.jdcloud.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, enjoy.cdn-static.abchina.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, acs.m.taobao.com, webappcfg.paas.cmbchina.com,amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn
+hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, dsp-x.jd.com, bdsp-x.jd.com, ms.jr.jd.com, router-app-api.jdcloud.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, acs.m.taobao.com, webappcfg.paas.cmbchina.com,amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn
 
 
 
