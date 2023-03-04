@@ -68,6 +68,18 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 # > taobao
 ^https?:\/\/gw\.alicdn\.com\/imgextra\/i\d\/.+1125-1602\.jpg - reject-200
 ^https:\/\/heic\.alicdn\.com\/imgextra\/\w{2}\/[\w!]+-\d-tps-\d{3,4}-\d{4}\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q90\.jpg_\.heic$ - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources - reject
+^https:\/\/gw\.alicdn\.com\/mt\/ url reject
+^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} url reject
+^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} url reject
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
 # > TaoPiaoPiao
 ^https?:\/\/acs.m.taobao.com\/gw\/mtop.film.mtopadvertiseapi.queryadvertise\/5.0.* - reject
 # > Xiecheng
@@ -85,7 +97,7 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush url response-body pushData response-body ddgksf2013
 
 [MITM]
-hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, dsp-x.jd.com, bdsp-x.jd.com, ms.jr.jd.com, router-app-api.jdcloud.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, acs.m.taobao.com, webappcfg.paas.cmbchina.com,amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn
+hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, dsp-x.jd.com, bdsp-x.jd.com, ms.jr.jd.com, router-app-api.jdcloud.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, heic.alicdn.com, webappcfg.paas.cmbchina.com, amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn, gw.alicdn.com
 
 
 
