@@ -21,18 +21,8 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https?:\/\/www1.elecfans.com\/www\/delivery\/ - reject
 # > feizhu
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.allresource - reject-200
-# 建设银行
-^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/nf\/newfin\/activity\/xjr_\w+\.png$ - reject
-^http:\/\/imageadv\.ccb\.com\/adpic\/(nctm\/ad|sszserver\/upload\/activity)\/\d{8}\/\w+\.(gif|png|jpg)$ - reject
 # > jianhangshenghuo
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A00(6|9) url reject-200
-# > jingdong
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(start|queryMaterialAdverts) - reject
-^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject
-# > jingdongjinrong
-^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture - reject
-# > jingdongyun
-^https?:\/\/router-app-api\.jdcloud\.com\/v\d\/board\/routerAppSplash - reject
 # > kfc
 ^https?:\/\/res.kfc.com.cn\/advertisement\/ - reject
 # > kuaishou
@@ -97,7 +87,7 @@ https://ccsp-egmas.sf-express.com/cx-app-base/base/app/ad/queryAdImages - reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush url response-body pushData response-body ddgksf2013
 
 [MITM]
-hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, dsp-x.jd.com, bdsp-x.jd.com, ms.jr.jd.com, router-app-api.jdcloud.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, heic.alicdn.com, webappcfg.paas.cmbchina.com, amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn, gw.alicdn.com
+hostname = gab.122.gov.cn, res.pizzahut.com.cn, res.xiaojukeji.com, elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com, yunbusiness.ccb.com, api.m.jd.com, res.kfc.com.cn, open.e.kuaishou.com, peisongapi.meituan.com, img.meituan.net, www.meituan.com, s3plus.meituan.net, flowplus.meituan.net, p*.meituan.net, wmapi.meituan.com, mxsa.mxbc.net, p0.pipi.cn, api.pinduoduo.com, api.yangkeduo.com, pss.txffp.com, lban.spdb.com.cn, ccsp-egmas.sf-express.com, api-sams.walmartmobile.cn, heic.alicdn.com, webappcfg.paas.cmbchina.com, amdc.m.taobao.com, heic.alicdn.com, api-sams.walmartmobile.cn, ucmp.sf-express.com, acs.m.taobao.com, client.app.coc.10086.cn, webappcfg.paas.cmbchina.com, m.ctrip.com, mlife.jf365.boc.cn, gw.alicdn.com
 
 
 
