@@ -1,2 +1,6 @@
-# > Xiecheng
+[Rewrite]
+# > ctrip
 ^https?:\/\/m\.ctrip\.com\/restapi\/soa2\/13916\/scjson\/tripAds - reject-200
+
+[MITM]
+hostname = m.ctrip.com
