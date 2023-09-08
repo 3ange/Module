@@ -1,0 +1,388 @@
+name: "MyBlockAds"
+desc: "去广告合集，以下app请使用单独配置文件：高德地图,哔哩哔哩,网易云音乐,微博,YouTube,知乎"
+#!author = RuCu6
+#!update = 2023-08-28 07:40
+http:
+  rewrite:
+    # 58同城 //*.58cdn.com.cn, app.58.com, pic?.ajkimg.com
+    - >-
+      ^https:\/\/app\.58\.com\/api\/home\/(advertising|appadv) - reject
+    - >-
+      ^https:\/\/app\.58\.com\/api\/home\/invite\/popupAdv - reject
+    - >-
+      ^https:\/\/app\.58\.com\/api\/log\/ - reject
+    - >-
+      ^https:\/\/pic\d\.ajkimg\.com\/mat\/\w+\?imageMogr\d\/format\/jpg\/thumbnail\/\d{3}x\d{4}$ - reject
+    - >-
+      ^https:\/\/.+\.58cdn\.com\.cn\/brandads - reject
+    # 爱回收 //gw.aihuishou.com
+    - >-
+      ^https:\/\/gw.aihuishou.com\/app-portal\/home\/getadvertisement - reject
+    # 爱思助手 //list-app-m.i4.cn
+    - >-
+      ^https:\/\/list-app-m\.i4\.cn\/(adclickcb|getHotSearchList|getopfstadinfo)\.xhtml - reject
+    # 阿里云盘 //api.alipan.com, member.alipan.com
+    - >-
+      ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders - reject-dict
+    # 阿里巴巴 //acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources - reject
+    - >-
+      ^https:\/\/gw\.alicdn\.com\/imgextra\/i\d\/[\w!]+-\d-tps-(702-758|1080-2430) - reject-dict
+    - >-
+      ^https:\/\/(gw|heic)\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602)\.jpg_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 - reject-dict
+    # 百度云 //pan.baidu.com
+    - >-
+      ^https:\/\/pan\.baidu\.com\/(act\/api\/activityentry|rest\/2\.0\/pcs\/adx)\? - reject-dict
+    - >-
+      ^https?:\/\/update\.pan\.baidu\.com\/statistics\? - reject-dict
+    - >-
+      ^https:\/\/www\.washpayer\.com\/(ad\/getBannerAd|ad\/user-adword|user\/getBannerList) - reject-dict
+    # 车来了 //api.chelaile.net.cn, web.chelaile.net.cn
+    - >-
+      ^https:\/\/api\.chelaile\.net\.cn\/adpub - reject
+    - >-
+      ^https:\/\/api\.chelaile\.net\.cn\/goocity\/advert - reject
+    - >-
+      ^https:\/\/web\.chelaile\.net\.cn\/api\/adpub - reject
+    # CSDN //app-gw.csdn.net
+    - >-
+      ^https:\/\/app-gw\.csdn\.net\/cms-app\/v\d\/home_page\/open_advertisement - reject
+    # 豆瓣 //api.douban.com
+    - >-
+      ^https:\/\/api\.douban\.com\/v2\/app_ads\/splash - reject
+    - >-
+      ^https:\/\/api\.douban\.com\b.*\/common_ads\? - reject
+    # 饿了么 //elemecdn.com, fuss10.elemecdn.com, www1.elecfans.com
+    - >-
+      ^https:\/\/elemecdn.com\/.+\/sitemap - reject
+    - >-
+      ^https:\/\/fuss10.elemecdn.com\/.+\/w\/640\/h\/\d{3,4} - reject
+    - >-
+      ^https:\/\/fuss10.elemecdn.com\/.+\/w\/750\/h\/\d{3,4} - reject
+    - >-
+      ^https:\/\/fuss10.elemecdn.com\/.+\.mp4 - reject
+    - >-
+      ^https:\/\/www1.elecfans.com\/www\/delivery - reject
+    # 飞猪 //acs.m.taobao.com
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) - reject-dict
+    # 海尔智家 //zj.haier.net
+    - >-
+      ^https:\/\/zj\.haier\.net\/api-gw\/shpmResource\/waterfall\/recommend\/list\? - reject
+    - >-
+      ^https:\/\/zj\.haier\.net\/omsappapi\/ad\/v1\/rotation - reject
+    # 京东 //api.m.jd.com
+    - >-
+      ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=start - reject
+    # 交管12123 //gab.122.gov.cn
+    - >-
+      ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
+    # 肯德基 //res.kfc.com.cn
+    - >-
+      ^https:\/\/res\.kfc\.com\.cn\/advertisement - reject
+    - >-
+      ^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-dict
+    # 美团 & 美团外卖//flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+    - >-
+      ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? - reject-dict
+    - >-
+      ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg - reject-dict
+    - >-
+      ^https:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg - reject-dict
+    - >-
+      ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ - reject-dict
+    # 拼多多 //api.pinduoduo.com, api.yangkeduo.com
+    - >-
+      ^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash - reject
+    # 网上国网 //ehome.esgcc.com.cn
+    - >-
+      ^https:\/\/(csc|osg)-static\.sgcc\.com\.cn(:28888)?\/omg-static\/(?=(98110|99101|99105|99106|99107|99111)) - reject
+    - >-
+      ^https:\/\/(csc-service|osg-base)\.sgcc\.com\.cn:\d+\/dtportal-app\/app_api\/selectExhibition - reject-dict
+    - >-
+      ^https:\/\/ehome\.esgcc\.com\.cn\/mobile\/ - reject
+    ## 移除公众号中的推广内容 //mp.weixin.qq.com
+    - >-
+      ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? - reject-dict
+    # 闲鱼 //gw.alicdn.com, acs.m.taobao.com
+    - >-
+      ^https:\/\/gw\.alicdn\.com\/mt\/ - reject
+    - >-
+      ^https:\/\/gw\.alicdn\.com\/tfs\/.+\d{3,4}-\d{4} - reject
+    - >-
+      ^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} - reject
+    - >-
+      ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome - reject
+    ## 搜索框,热词,卡片
+    - >-
+      ^https:\/\/api\.m\.mi\.com\/v1\/app\/popup_info$ - reject-dict
+    - >-
+      ^https:\/\/api\.m\.mi\.com\/v1\/misearch\/search_input$ - reject-dict
+    - >-
+      ^https:\/\/api\.m\.mi\.com\/v2\/search\/search_default$ - reject-dict
+    ## 商品推荐信息流
+    - >-
+      ^https:\/\/api\.m\.mi\.com\/v1\/home\/page_feed(_v5)?$ - reject-dict
+    ## 小米金融 //api.jr.mi.com
+    - >-
+      ^https:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen - reject
+    - >-
+      ^https:\/\/api\.jr\.mi\.com\/v\d\/adv - reject
+    ## 米家 //home.mi.com
+    - >-
+      ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|myTab|openingBanner) - reject-dict
+    # 云闪付 //wallet.95516.com
+    - >-
+      ^https:\/\/wallet\.95516\.com(:10533)?\/s\/wl\/icon\/large\/1 - reject
+    # 中国移动 //clientaccess.10086.cn, wap.js.10086.cn
+    - >-
+      ^https:\/\/clientaccess\.10086\.cn\/biz-orange\/DN\/init\/startInit - reject
+    - >-
+      ^https:\/\/wap\.js\.10086\.cn\/jsmccClient\/cd\/market_content\/api\/v\d\/market_content\.page\.query - reject
+
+  script:
+    # 京东极速版 //api.m.jd.com
+    - match: ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising
+      name: "replace-Body"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      argument: |-
+        jdLiteAdvertisingVO->rucu6
+
+    - match: ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList
+      name: "12306_6"
+      type: request
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch
+      name: "header_15"
+      type: response
+      timeout: 30
+      require-body: false
+      max-size: 0
+      binary-mode: false
+
+    - match: ^https:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets)
+      name: "adrive_22"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list
+      name: "adrive_22"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\?
+      name: "myBlockAds_38"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^http:\/\/ad\.5tao5ai\.com\/common\/getReceipt\?
+      name: "changyuan_42"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/www\.washpayer\.com\/(common\/getReceipt|user\/message\/equipmentPara)\?
+      name: "changyuan_42"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/(v1\/(ads|startup|users)|v4\/movies\/\w+)
+      name: "myBlockAds_38"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/(api\.yijingluowangluo\.xyz|jdforrepam\.com)\/api\/v1\/movies\/\w+\/play\?
+      name: "javdb_72"
+      type: request
+      timeout: 30
+      require-body: false
+      max-size: 0
+      binary-mode: false
+
+    - match: ^https:\/\/links\.jianshu\.com\/go\?to=
+      name: "noRedirect_77"
+      type: request
+      timeout: 30
+      require-body: false
+      max-size: 0
+      binary-mode: false
+
+    - match: ^https:\/\/www\.jianshu\.com\/go-wild\?ac=\d&url=
+      name: "noRedirect_77"
+      type: request
+      timeout: 30
+      require-body: false
+      max-size: 0
+      binary-mode: false
+
+    - match: ^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?
+      name: "coolapk_89"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init)
+      name: "coolapk_89"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\?
+      name: "coolapk_89"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/gql\.reddit\.com\/$
+      name: "reddit_104"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?
+      name: "wechat110_120"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+    - match: ^https:\/\/api\.m\.mi\.com\/v1\/(app\/start|order\/expressView|product\/productView)
+      name: "myBlockAds_38"
+      type: response
+      timeout: 30
+      require-body: true
+      max-size: 3145728
+      binary-mode: false
+
+  mitm:
+    - "ad.12306.cn"
+    - "*.58cdn.com.cn"
+    - "app.58.com"
+    - "pic?.ajkimg.com"
+    - "gw.aihuishou.com"
+    - "list-app-m.i4.cn"
+    - "api.alipan.com"
+    - "member.alipan.com"
+    - "acs.m.taobao.com"
+    - "gw.alicdn.com"
+    - "heic.alicdn.com"
+    - "pan.baidu.com"
+    - "update.pan.baidu.com"
+    - "www.washpayer.com"
+    - "api.chelaile.net.cn"
+    - "web.chelaile.net.cn"
+    - "app-gw.csdn.net"
+    - "api.douban.com"
+    - "elemecdn.com"
+    - "fuss10.elemecdn.com"
+    - "www1.elecfans.com"
+    - "zj.haier.net"
+    - "api.yijingluowangluo.xyz"
+    - "jdforrepam.com"
+    - "links.jianshu.com"
+    - "www.jianshu.com"
+    - "api.m.jd.com"
+    - "gab.122.gov.cn"
+    - "res.kfc.com.cn"
+    - "api.coolapk.com"
+    - "flowplus.meituan.net"
+    - "img.meituan.net"
+    - "s3plus.meituan.net"
+    - "api.pinduoduo.com"
+    - "api.yangkeduo.com"
+    - "gql.reddit.com"
+    - "tiebac.baidu.com"
+    - "ehome.esgcc.com.cn"
+    - "*.sgcc.com.cn"
+    - "mp.weixin.qq.com"
+    - "weixin110.qq.com"
+    - "security.wechat.com"
+    - "api.m.mi.com"
+    - "api.jr.mi.com"
+    - "home.mi.com"
+    - "wallet.95516.com"
+    - "clientaccess.10086.cn"
+    - "wap.js.10086.cn"
+
+script-providers:
+  "replace-Body":
+    url: https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js
+    interval: 86400
+  "12306_6":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/12306.js
+    interval: 86400
+  "header_15":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js
+    interval: 86400
+  "adrive_22":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js
+    interval: 86400
+  "myBlockAds_38":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js
+    interval: 86400
+  "changyuan_42":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/changyuan.js
+    interval: 86400
+  "javdb_72":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/javdb.js
+    interval: 86400
+  "noRedirect_77":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js
+    interval: 86400
+  "coolapk_89":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js
+    interval: 86400
+  "reddit_104":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/reddit.js
+    interval: 86400
+  "wechat110_120":
+    url: https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/wechat/wechat110.js
+    interval: 86400
