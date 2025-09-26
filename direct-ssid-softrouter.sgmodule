@@ -1,5 +1,10 @@
+#!name=软路由直连
+#!desc=在软路由接管下直连，且关闭加密 DNS，让软路由接管 DNS
+#!arguments=wifi-ssid=
+#!arguments-desc=填写你的 WI-FI SSID，可以使用通配符 *
+
 [Rule]
-SUBNET,SSID:{{{asus_80_5G}}},DIRECT
+SUBNET,SSID:{{{wifi-ssid}}},DIRECT
 
 [SSID Setting]
-SSID:{{{asus_80_5G}}} dns-server=system,encrypted-dns-server=off
+SSID:{{{wifi-ssid}}} dns-server=system,encrypted-dns-server=off
